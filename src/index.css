@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: var(--accent);
+  --color-text-main: var(--text);
+  --color-text-heading: var(--text-h);
+  --color-border-main: var(--border);
+}
+
+:root {
+  /* LIGHT MODE (Clean Ice-Blue Slate) */
+  --text: #334155;            /* Slate 700 - readable paragraph */
+  --text-h: #0f172a;          /* Slate 900 - heavy rich heading */
+  --bg: #f8fafc;              /* Slate 50  - crisp background */
+  --border: #e2e8f0;          /* Slate 200 - clean border line */
+  --code-bg: #ffffff;         /* Pure white content cards */
+  --accent: #0ea5e9;          /* Deep Sky Blue Accent */
+  --accent-bg: rgba(14, 165, 233, 0.1);
+  --accent-border: rgba(14, 165, 233, 0.5);
+  --social-bg: rgba(226, 232, 240, 0.5);
+  --shadow: rgba(15, 23, 42, 0.05) 0 10px 15px -3px, rgba(15, 23, 42, 0.03) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* DARK MODE (Premium Deep Slate Blue) */
+    --bg: #0f172a;            /* Slate 900 - rich deep slate blue background */
+    --code-bg: #1e293b;       /* Slate 800 - distinct card layer color */
+    --text-h: #f8fafc;        /* Slate 50  - high-contrast bright text */
+    --text: #94a3b8;          /* Slate 400 - smooth readable paragraph text */
+    --border: #334155;        /* Slate 700 - sharp grid wireframe color */
+    --accent: #38bdf8;        /* Electric Neon Cyan - pops beautifully on dark blue */
+    --accent-bg: rgba(56, 189, 248, 0.12);
+    --accent-border: rgba(56, 189, 248, 0.4);
+    --social-bg: rgba(30, 41, 59, 0.6);
+    --shadow: rgba(0, 0, 0, 0.3) 0 20px 25px -5px, rgba(0, 0, 0, 0.2) 0 10px 10px -5px;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 118%;
+  letter-spacing: -0.5px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 22px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+code, .counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 6px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 14px;
+  line-height: 135%;
+  padding: 4px 10px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+}
+
+.counter {
+  background: var(--code-bg);
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.counter:hover {
+  border-color: var(--accent) !important;
+  background: var(--accent-bg);
+}
