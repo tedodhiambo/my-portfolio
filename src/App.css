@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: var(--accent);
+  --color-text-main: var(--text);
+  --color-text-heading: var(--text-h);
+  --color-border-main: var(--border);
+}
+
+:root {
+  /* Permanent Premium Deep Slate Blue Theme */
+  --bg: #0f172a;            /* Slate 900 - Dark Blue Background */
+  --code-bg: #1e293b;       /* Slate 800 - Card layer background */
+  --text-h: #f8fafc;        /* Slate 50  - Bright high-contrast heading text */
+  --text: #94a3b8;          /* Slate 400 - Smooth readable biography text */
+  --border: #334155;        /* Slate 700 - Sharp grid layout borders */
+  --accent: #38bdf8;        /* Electric Neon Cyan - Pops off the dark blue background */
+  --accent-bg: rgba(56, 189, 248, 0.12);
+  --accent-border: rgba(56, 189, 248, 0.4);
+  --social-bg: rgba(30, 41, 59, 0.6);
+  --shadow: rgba(0, 0, 0, 0.3) 0 20px 25px -5px, rgba(0, 0, 0, 0.2) 0 10px 10px -5px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg) !important; /* Forces the browser to discard standard system colors */
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 118%;
+  letter-spacing: -0.5px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 22px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+code, .counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 6px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 14px;
+  line-height: 135%;
+  padding: 4px 10px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+}
+
+.counter {
+  background: var(--code-bg);
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.counter:hover {
+  border-color: var(--accent) !important;
+  background: var(--accent-bg);
+}
